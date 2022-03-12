@@ -18,15 +18,223 @@
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+      /* font-family: 'Poppins', sans-serif; */
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+      /* font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif; */
+      :root {
+        --Violet: hsl(257, 40%, 49%);
+        --Soft-Magenta: hsl(300, 69%, 71%);
       }
-      .attribution a {
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 0.9375rem;
+        font-family: "Poppins", sans-serif;
+        color: white;
+      }
+      body {
+        background-color: var(--Violet);
+        position: relative;
+        height: 100vh;
+      }
+      .flex-img {
+        width: 100%;
+        height: auto;
+        display: inline;
+        z-index: 4;
+      }
+
+      .hero {
+        width: min(600px, 85%);
+        display: block;
+        margin: 9.3rem auto 0 auto;
+      }
+      @media screen and (min-width: 800px) {
+        .hero {
+          width: min(650px, 80%);
+          display: block;
+          margin: 3rem 0 0 2.8rem;
+        }
+      }
+      .bigcont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(logo.svg), url(bg-mobile.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 30%, contain;
+        background-position: top 4vh left 7vw, top -0.05rem center;
+        /* width: 100vw; */
+        height: auto;
+      }
+      @media screen and (min-width: 800px) {
+        .bigcont {
+          flex-direction: row;
+          /* justify-content: center; */
+          align-items: center;
+          background-image: url(logo.svg), url(bg-desktop.svg);
+          background-size: 20%, cover;
+          background-position: top 5vh left 3rem, center right -7vw;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          /* padding-bottom: 69.8px; */
+        }
+      }
+      /* @media screen and (min-width: 1000px) {
+        .bigcont {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-image: url(/logo.svg), url(/bg-desktop.svg);
+          background-size: 20%, cover;
+          background-position: top left 4vw, center right -7vw;
+          width: 100vw;
+          height: 100%;
+        }
+      } */
+
+      .grid {
+        display: flex;
+        flex-direction: column;
+        width: 23.4375rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 5rem;
+      }
+      @media screen and (min-width: 800px) {
+        .grid {
+          width: auto;
+        }
+      }
+      .flex-par {
+        /* grid-area: middle; */
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        /* justify-content: center;
+  align-items: center; */
+      }
+      @media screen and (min-width: 1000px) {
+        .flex-par {
+          text-align: left;
+          margin-left: -6rem;
+        }
+      }
+      h1 {
+        font-size: 2rem;
+        /* width: 25rem; */
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      /* the h1 under the big image */
+      p {
+        width: 19.3rem;
+
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+      }
+      @media screen and (min-width: 588px) {
+        h1 {
+          font-size: 3rem;
+          width: 40rem;
+        }
+        p {
+          font-size: 1.5rem;
+          width: 45rem;
+        }
+      }
+      @media screen and (min-width: 800px) {
+        h1 {
+          font-size: 3rem;
+          width: 40rem;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: 400;
+          width: 35rem;
+        }
+      }
+      .submit {
+        text-decoration: none;
+        background-color: white;
+        color: var(--Violet);
+        padding: 0.7rem 5rem;
+        border-radius: 40px;
+        margin: 1.4rem 0 3.8rem 0;
+        transition: 0.5s ease-in;
+        box-shadow: 0 8px 6px -6px rgb(37, 12, 37);
+        /* added margin top here so the button would have some space from the paragraph */
+      }
+      .submit:hover {
+        background-color: var(--Soft-Magenta);
+        /* letter-spacing: 1px; */
+        color: white;
+      }
+      @media screen and (min-width: 800px) {
+        .submit {
+          margin-right: 30rem;
+        }
+      }
+      .flex-ico {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5rem;
+        position: relative;
+      }
+      .flex-ico i:nth-of-type(1),
+      .flex-ico i:nth-of-type(2),
+      .flex-ico i:nth-of-type(3) {
+        margin-right: 10px;
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 20px;
+        padding: 10px 12px;
+        transition: all 0.4s ease-out;
+        font-weight: 600;
+      }
+      .flex-ico i:nth-of-type(1):hover,
+      .flex-ico i:nth-of-type(2):hover,
+      .flex-ico i:nth-of-type(3):hover {
+        border: 1px solid var(--Soft-Magenta);
+        color: var(--Soft-Magenta);
+      }
+      @media screen and (min-width: 800px) {
+        .flex-ico {
+          position: relative;
+          top: 20vh;
+          right: -10vw;
+        }
+      }
+      footer {
+        grid-area: bottom;
+        text-align: center;
+
         color: hsl(228, 45%, 44%);
       }
+      @media screen and (min-width: 800px) {
+        footer {
+          position: relative;
+          bottom: -6.5vh;
+          left: -70vh;
+        }
+      }
+      .grid-foot a {
+        text-decoration: none;
+        color: var(--Soft-Magenta);
+        margin-bottom: 20px;
+      }
     </style>
-    <link rel="stylesheet" href="/huddle1.css" />
+
     <script
       src="https://kit.fontawesome.com/f1ee426c55.js"
       crossorigin="anonymous"
@@ -35,7 +243,7 @@
   <body>
     <div class="bigcont">
       <div class="flex-img">
-        <img class="hero" src="/illustration-mockups.svg" alt="" />
+        <img class="hero" src="illustration-mockups.svg" alt="" />
       </div>
       <!-- the main img -->
       <div class="grid">
@@ -62,7 +270,11 @@
               target="_blank"
               >Frontend Mentor</a
             >. Coded by
-            <a href="https://www.frontendmentor.io/profile/Brezus">Millz</a>.
+            <a
+              href="https://www.frontendmentor.io/profile/Brezus"
+              target="_blank"
+              >Millz</a
+            >.
           </p>
         </footer>
       </div>
