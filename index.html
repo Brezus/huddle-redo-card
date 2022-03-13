@@ -42,7 +42,7 @@ font-family: 'Poppins', sans-serif; */
       body {
         background-color: var(--Violet);
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
       }
       .flex-img {
         width: 100%;
@@ -56,13 +56,7 @@ font-family: 'Poppins', sans-serif; */
         display: block;
         margin: 9.3rem auto 0 auto;
       }
-      @media screen and (min-width: 800px) {
-        .hero {
-          width: min(650px, 80%);
-          display: block;
-          margin: 3rem 0 0 2.8rem;
-        }
-      }
+
       .bigcont {
         display: flex;
         flex-direction: column;
@@ -71,35 +65,34 @@ font-family: 'Poppins', sans-serif; */
         background-repeat: no-repeat, no-repeat;
         background-size: 30%, contain;
         background-position: top 4vh left 7vw, top -0.05rem center;
-        /* width: 100vw; */
         height: auto;
       }
       @media screen and (min-width: 800px) {
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         .bigcont {
           flex-direction: row;
-          /* justify-content: center; */
-          align-items: center;
+          align-items: flex-start;
           background-image: url(logo.svg), url(bg-desktop.svg);
           background-size: 20%, cover;
           background-position: top 5vh left 3rem, center right -7vw;
+          justify-content: space-between;
+          width: 90%;
+          max-width: 1000px;
+          margin-inline: auto;
+        }
+        .flex-img {
+          width: 45%;
+        }
+        .hero {
           width: 100%;
-          height: 100%;
-          overflow: hidden;
-          /* padding-bottom: 69.8px; */
+          display: block;
+          margin: 0;
         }
       }
-      /* @media screen and (min-width: 1000px) {
-        .bigcont {
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          background-image: url(/logo.svg), url(/bg-desktop.svg);
-          background-size: 20%, cover;
-          background-position: top left 4vw, center right -7vw;
-          width: 100vw;
-          height: 100%;
-        }
-      } */
 
       .grid {
         display: flex;
@@ -112,16 +105,16 @@ font-family: 'Poppins', sans-serif; */
       }
       @media screen and (min-width: 800px) {
         .grid {
-          width: auto;
+          width: 45%;
+          margin-top: 0;
         }
       }
       .flex-par {
-        /* grid-area: middle; */
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 20px;
-        /* justify-content: center;
-  align-items: center; */
+        place-items: center;
+        width: 100%;
       }
       @media screen and (min-width: 1000px) {
         .flex-par {
@@ -131,36 +124,28 @@ font-family: 'Poppins', sans-serif; */
       }
       h1 {
         font-size: 2rem;
-        /* width: 25rem; */
         font-weight: 700;
         line-height: 1.2;
       }
       /* the h1 under the big image */
       p {
-        width: 19.3rem;
-
         font-family: "Open Sans", sans-serif;
         font-weight: 400;
       }
       @media screen and (min-width: 588px) {
         h1 {
           font-size: 3rem;
-          width: 40rem;
+          max-width: 40rem;
         }
         p {
           font-size: 1.5rem;
-          width: 45rem;
+          max-width: 45rem;
         }
       }
       @media screen and (min-width: 800px) {
-        h1 {
-          font-size: 3rem;
-          width: 40rem;
-        }
         p {
           font-size: 1rem;
           font-weight: 400;
-          width: 35rem;
         }
       }
       .submit {
@@ -181,7 +166,8 @@ font-family: 'Poppins', sans-serif; */
       }
       @media screen and (min-width: 800px) {
         .submit {
-          margin-right: 30rem;
+          margin: 0rem;
+          width: 100px;
         }
       }
       .flex-ico {
@@ -218,14 +204,16 @@ font-family: 'Poppins', sans-serif; */
       footer {
         grid-area: bottom;
         text-align: center;
-
         color: hsl(228, 45%, 44%);
       }
       @media screen and (min-width: 800px) {
         footer {
-          position: relative;
-          bottom: -6.5vh;
-          left: -70vh;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
         }
       }
       .grid-foot a {
@@ -257,12 +245,12 @@ font-family: 'Poppins', sans-serif; */
           <a href="#" class="submit">Register</a>
         </div>
 
-        <div class="flex-ico">
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-pinterest-p"></i>
-          <i class="fab fa-tiktok"></i>
-        </div>
         <footer class="grid-foot">
+          <div class="flex-ico">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-tiktok"></i>
+          </div>
           <p class="attribution">
             Challenge by
             <a
