@@ -43,6 +43,10 @@ font-family: 'Poppins', sans-serif; */
         background-color: var(--Violet);
         position: relative;
         min-height: 100vh;
+        background-image: url(logo.svg), url(bg-mobile.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 30%, contain;
+        background-position: top 4vh left 7vw, top -0.05rem center;
       }
       i {
         cursor: pointer;
@@ -64,10 +68,7 @@ font-family: 'Poppins', sans-serif; */
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-image: url(logo.svg), url(bg-mobile.svg);
-        background-repeat: no-repeat, no-repeat;
-        background-size: 30%, contain;
-        background-position: top 4vh left 7vw, top -0.05rem center;
+
         height: auto;
       }
       @media screen and (min-width: 800px) {
@@ -75,13 +76,14 @@ font-family: 'Poppins', sans-serif; */
           display: flex;
           justify-content: center;
           align-items: center;
+          background-image: url(logo.svg), url(bg-desktop.svg);
+          background-size: 20%, cover;
+          background-position: top 5vh left 3rem, center right 0vw;
         }
         .bigcont {
           flex-direction: row;
           align-items: flex-start;
-          background-image: url(logo.svg), url(bg-desktop.svg);
-          background-size: 20%, cover;
-          background-position: top 5vh left 3rem, center right -7vw;
+
           width: 90%;
           max-width: 1000px;
           margin-inline: auto;
@@ -119,11 +121,7 @@ font-family: 'Poppins', sans-serif; */
         place-items: center;
         width: 100%;
       }
-      @media screen and (min-width: 1000px) {
-        .flex-par {
-          text-align: left;
-        }
-      }
+
       h1 {
         font-size: 2rem;
         font-weight: 700;
@@ -157,7 +155,7 @@ font-family: 'Poppins', sans-serif; */
         padding: 0.7rem 5rem;
         border-radius: 40px;
         margin: 1.4rem 0 3.8rem 0;
-        transition: 0.5s ease-in;
+        transition: 0.3s ease-in;
         box-shadow: 0 8px 6px -6px rgb(37, 12, 37);
         /* added margin top here so the button would have some space from the paragraph */
       }
@@ -165,11 +163,12 @@ font-family: 'Poppins', sans-serif; */
         background-color: var(--Soft-Magenta);
         /* letter-spacing: 1px; */
         color: white;
+        box-shadow: rgba(37, 12, 37, 0.486) 0px 5px 15px;
       }
       @media screen and (min-width: 800px) {
         .submit {
           margin: 0rem;
-          justify-self: start;
+          justify-self: center;
         }
       }
       .flex-ico {
@@ -216,6 +215,14 @@ font-family: 'Poppins', sans-serif; */
           position: absolute;
           right: 30px;
           bottom: 3%;
+        }
+      }
+      @media screen and (min-width: 1000px) {
+        .flex-par {
+          text-align: left;
+        }
+        .submit {
+          justify-self: start;
         }
       }
       .grid-foot a {
