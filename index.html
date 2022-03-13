@@ -44,6 +44,9 @@ font-family: 'Poppins', sans-serif; */
         position: relative;
         min-height: 100vh;
       }
+      i {
+        cursor: pointer;
+      }
       .flex-img {
         width: 100%;
         height: auto;
@@ -79,13 +82,13 @@ font-family: 'Poppins', sans-serif; */
           background-image: url(logo.svg), url(bg-desktop.svg);
           background-size: 20%, cover;
           background-position: top 5vh left 3rem, center right -7vw;
-          justify-content: space-between;
           width: 90%;
           max-width: 1000px;
           margin-inline: auto;
+          gap: 2rem;
         }
         .flex-img {
-          width: 45%;
+          width: 55%;
         }
         .hero {
           width: 100%;
@@ -119,7 +122,6 @@ font-family: 'Poppins', sans-serif; */
       @media screen and (min-width: 1000px) {
         .flex-par {
           text-align: left;
-          margin-left: -6rem;
         }
       }
       h1 {
@@ -167,7 +169,7 @@ font-family: 'Poppins', sans-serif; */
       @media screen and (min-width: 800px) {
         .submit {
           margin: 0rem;
-          width: 100px;
+          justify-self: start;
         }
       }
       .flex-ico {
@@ -196,9 +198,7 @@ font-family: 'Poppins', sans-serif; */
       }
       @media screen and (min-width: 800px) {
         .flex-ico {
-          position: relative;
-          top: 20vh;
-          right: -10vw;
+          margin-bottom: 0;
         }
       }
       footer {
@@ -208,12 +208,14 @@ font-family: 'Poppins', sans-serif; */
       }
       @media screen and (min-width: 800px) {
         footer {
-          position: absolute;
-          bottom: 0;
-          left: 0;
           display: flex;
+          align-items: center;
+          flex-direction: row-reverse;
           justify-content: space-between;
-          width: 100%;
+          width: 50%;
+          position: absolute;
+          right: 30px;
+          bottom: 3%;
         }
       }
       .grid-foot a {
